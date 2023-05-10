@@ -10,5 +10,20 @@ int main()
     printf("4. Kembalikan buku\n");
     printf("5. Keluar\n");
     printf("Pilihan anda: ");
-    scanf("%d", &pilihan);    
+    scanf("%d", &pilihan);
+    
+    switch (pilihan)
+        {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 2:
+            break;
+        case 2:
+            break;
+       
+        }
 }
