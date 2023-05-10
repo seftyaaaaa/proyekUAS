@@ -61,6 +61,44 @@ void mencari_buku()
     }
 }
 
+void pinjam_buku()
+{
+    char judul[255];
+    int cari_buku = 0;
+
+    printf("=========================================================================\n");
+    printf("===Silahkan masukan buku yang akan dipinjam di Perpustakaan Statistika===\n");
+    printf("=========================================================================\n");
+    printf("Judul buku: ");
+    scanf("%s", judul);
+
+    for (int i = 0; i < total_buku; i++)
+    {
+        if (strcmp(buku[i].judul, judul) == 0)
+        {
+            if (buku[i].tersedia == 1)
+            {
+                buku[i].tersedia = 0;
+                printf("Buku %s berhasil dipinjam.\n", buku[i].judul);
+                printf("\n");
+            }
+            else
+            {
+                printf("Buku %s sedang dipinjam.\n", buku[i].judul);
+                printf("\n");
+            }
+            cari_buku = 1;
+            break;
+        }
+    }
+
+    if (cari_buku == 0)
+    {
+        printf("Buku %s yang ingin anda pinjam tidak ditemukan\n", judul);
+        printf("\n");
+    }
+}
+
 
 int main()
 {
