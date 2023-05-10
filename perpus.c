@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+struct data_buku
+{
+    char judul[255];
+    char penerbit[255];
+    char pengarang[255];
+    int halaman;
+    int tahun;
+    int tersedia;
+};
+
+struct data_buku buku[60];
+
 int main()
 {
     int pilihan;
