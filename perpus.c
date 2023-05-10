@@ -1,8 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 
-int total_buku=0;
-
-struct data_buku
+typedef struct data_buku
 {
     char judul[255];
     char penerbit[255];
@@ -10,9 +9,9 @@ struct data_buku
     int halaman;
     int tahun;
     int tersedia;
-};
+} buku_buku;
 
-struct data_buku buku[60];
+buku_buku buku[255];
 int total_buku = 0;
 
 void menambah_buku()
@@ -151,6 +150,9 @@ void kembalikan_buku()
 int main()
 {
     int pilihan;
+    printf("--------------------------------------------------------\n");
+    printf("\tSelamat datang di Perpustakaan Statistika\n");
+    printf("--------------------------------------------------------\n");
     do
     {
         printf("Menu:\n");
@@ -177,10 +179,12 @@ int main()
             kembalikan_buku();
             break;
         case 5:
-            printf("Anda keluar.\n");
+            printf("------------------------------------------------------------------\n");
+            printf("\tTerima kasih telah datang di Perpustakaan Statistika\n");
+            printf("------------------------------------------------------------------\n");
             break;
         default:
-            printf("masukan pilihan anda.\n");
+            printf("Silahkan pilih 1-5 ^-^.\n");
             break;
         }
     } while (pilihan != 5);
