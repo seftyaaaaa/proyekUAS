@@ -151,28 +151,39 @@ void kembalikan_buku()
 int main()
 {
     int pilihan;
-    printf("====Selamat datang di Perpustakaan Statistika====n:\n");
-    printf("1. Tambah buku\n");
-    printf("2. Cari buku\n");
-    printf("3. Pinjam buku\n");
-    printf("4. Kembalikan buku\n");
-    printf("5. Keluar\n");
-    printf("Pilihan anda: ");
-    scanf("%d", &pilihan);
-    
-    switch (pilihan)
+    do
+    {
+        printf("Menu:\n");
+        printf("1. Tambah buku\n");
+        printf("2. Cari buku\n");
+        printf("3. Pinjam buku\n");
+        printf("4. Kembalikan buku\n");
+        printf("5. Keluar\n");
+        printf("Pilihan anda: ");
+        scanf("%d", &pilihan);
+
+        switch (pilihan)
         {
         case 1:
-            menambahkan_buku();
+            menambah_buku();
             break;
         case 2:
+            mencari_buku();
             break;
         case 3:
+            pinjam_buku();
             break;
-        case 2:
+        case 4:
+            kembalikan_buku();
             break;
-        case 2:
+        case 5:
+            printf("Anda keluar.\n");
             break;
-       
+        default:
+            printf("masukan pilihan anda.\n");
+            break;
         }
+    } while (pilihan != 5);
+
+    return 0;
 }
