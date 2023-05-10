@@ -13,11 +13,14 @@ struct data_buku
 };
 
 struct data_buku buku[60];
+int total_buku = 0;
 
 void menambah_buku()
 {
-    printf("===Untuk menambahkan buku di Perpustakaan Statistika, silahkan masukan===");
-    printf("Judul buku: "); //masukan judul buku tanpa spasi
+    printf("=========================================================================\n");
+    printf("===Untuk menambahkan buku di Perpustakaan Statistika, silahkan masukan===\n");
+    printf("=========================================================================\n");
+    printf("Judul buku: ");
     scanf("%s", buku[total_buku].judul);
     printf("Pengarang: ");
     scanf("%s", buku[total_buku].pengarang);
@@ -31,6 +34,7 @@ void menambah_buku()
 
     ++total_buku;
     printf("Buku telah berhasil ditambahkan. Terimakasih ^-^\n");
+    printf("\n");
 }
 
 void mencari_buku()
@@ -38,18 +42,24 @@ void mencari_buku()
     char judul[255];
     int cari_buku = 0;
 
-    printf("Cari buku : ");
+    printf("========================================================\n");
+    printf("===Cari buku yang tersedia di Perpustakaan Statistika===\n");
+    printf("========================================================\n");
+    printf("Masukan judul buku yang dicari: ");
     scanf("%s", judul);
 
     for (int i = 0; i < total_buku; i++)
     {
         if (strcmp(buku[i].judul, judul) == 0)
         {
+            printf("Tersedia:\n");
             printf("Judul buku: %s\n", buku[i].judul);
             printf("Pengarang: %s\n", buku[i].pengarang);
             printf("Tahun terbit: %d\n", buku[i].tahun);
-            printf("Penerbit %s\n", buku[i].penerbit);
+            printf("Penerbit: %s\n", buku[i].penerbit);
             printf("Jumlah halaman: %d\n", buku[i].halaman);
+            printf("\n");
+
             cari_buku = 1;
             break;
         }
@@ -57,7 +67,8 @@ void mencari_buku()
 
     if (cari_buku == 0)
     {
-        printf("Buku %s tidak ditemukan di Perpustakaan ini\n", judul);
+        printf("Mohon maaf, buku %s tidak ditemukan di Perpustakaan ini\n", judul);
+        printf("\n");
     }
 }
 
