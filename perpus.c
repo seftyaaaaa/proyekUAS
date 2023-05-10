@@ -33,6 +33,35 @@ void menambah_buku()
     printf("Buku telah berhasil ditambahkan. Terimakasih ^-^\n");
 }
 
+void mencari_buku()
+{
+    char judul[255];
+    int cari_buku = 0;
+
+    printf("Cari buku : ");
+    scanf("%s", judul);
+
+    for (int i = 0; i < total_buku; i++)
+    {
+        if (strcmp(buku[i].judul, judul) == 0)
+        {
+            printf("Judul buku: %s\n", buku[i].judul);
+            printf("Pengarang: %s\n", buku[i].pengarang);
+            printf("Tahun terbit: %d\n", buku[i].tahun);
+            printf("Penerbit %s\n", buku[i].penerbit);
+            printf("Jumlah halaman: %d\n", buku[i].halaman);
+            cari_buku = 1;
+            break;
+        }
+    }
+
+    if (cari_buku == 0)
+    {
+        printf("Buku %s tidak ditemukan di Perpustakaan ini\n", judul);
+    }
+}
+
+
 int main()
 {
     int pilihan;
